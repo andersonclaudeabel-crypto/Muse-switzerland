@@ -1,0 +1,27 @@
+# INSTRUCTIONS CLAUDE CODE — MUSE SWITZERLAND
+
+Tu travailles sur Muse Switzerland, une marketplace WordPress/WooCommerce/Dokan de mode premium suisse.
+
+## Stack
+WordPress 6.x + WooCommerce 8.x + Dokan Pro + Stripe Connect + Diva (TWINT) + Polylang FR/DE/EN + Infomaniak PHP 8.2
+
+## Design
+- Beige: #F2EFE9 | Noir: #111110 | Rouge: #C41E3A | Gris: #6B6B68
+- Fonts: Cormorant Garamond (titres) + Jost (corps)
+- Textes: 11-12px | Bordures: 0.5px | Style premium minimaliste
+- Logo: Monogramme Ms dans carré 42px
+
+## Pages
+homepage / search-results / product / vendor / buyer-dashboard / checkout
+
+## Vendeurs
+acheteur / vendeur-particulier / commercant
+
+## Règles importantes
+- Prix format suisse: CHF 1'450.–
+- TVA suisse 7.7% au checkout
+- Section "Fréquemment achetés ensemble" sur fiches produit
+- Badge état: NEUF AVEC ÉTIQUETTE / TRÈS BON ÉTAT / BON ÉTAT
+- Conforme LPD (loi suisse protection des données)
+- CSS dans: assets/css/muse-design-system.css
+- JS dans: assets/js/muse-main.js
