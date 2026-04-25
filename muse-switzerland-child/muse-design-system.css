@@ -1,0 +1,447 @@
+/* ============================================================
+   MUSE SWITZERLAND — Design System CSS
+   assets/css/muse-design-system.css
+   ============================================================ */
+
+/* --- VARIABLES -------------------------------------------- */
+:root {
+  --muse-beige:       #F2EFE9;
+  --muse-beige-dark:  #EAE6DE;
+  --muse-noir:        #111110;
+  --muse-rouge:       #C41E3A;
+  --muse-gris:        #6B6B68;
+  --muse-blanc:       #FFFFFF;
+  --muse-border:      rgba(17,17,16,0.15);
+  --font-titre:       'Cormorant Garamond', Georgia, serif;
+  --font-corps:       'Jost', sans-serif;
+  --header-height:    72px;
+  --transition:       0.25s ease;
+}
+
+/* ============================================================
+   HEADER — Logo centré, nav gauche, icônes droite
+   ============================================================ */
+
+/* Masquer le header Divi par défaut et le reconstruire */
+#main-header,
+#main-header .et_header_style_centered,
+.et_header_style_centered #main-header-area {
+  background-color: var(--muse-blanc) !important;
+  border-bottom: 0.5px solid var(--muse-border) !important;
+  box-shadow: none !important;
+  height: var(--header-height) !important;
+  transition: background-color var(--transition) !important;
+}
+
+/* Header scrollé — léger fond beige */
+#main-header.et-fixed-header {
+  background-color: rgba(242,239,233,0.97) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+#main-header-area {
+  max-width: 100% !important;
+  padding: 0 32px !important;
+}
+
+/* Container header : 3 colonnes (nav | logo | icônes) */
+.et_header_style_centered #main-header-area .container {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  height: var(--header-height) !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+/* --- LOGO (colonne centrale) --- */
+#logo-container,
+.et_header_style_centered #logo-container {
+  grid-column: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+}
+
+/* Injecter le monogramme SVG via CSS si logo image non chargée */
+#logo-container a,
+#logo-container .muse-logo-link {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+/* Taille du logo image */
+#logo-container img,
+#logo {
+  width: 42px !important;
+  height: 42px !important;
+  max-height: 42px !important;
+  object-fit: contain !important;
+}
+
+/* Fallback texte si image absente */
+.muse-logo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 0.75px solid var(--muse-noir);
+  font-family: var(--font-titre);
+  font-size: 0;
+  position: relative;
+  text-decoration: none;
+}
+
+.muse-logo-fallback::before {
+  content: "M";
+  font-family: var(--font-titre);
+  font-size: 17px;
+  color: var(--muse-noir);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-58%, -46%);
+}
+
+.muse-logo-fallback::after {
+  content: "s";
+  font-family: var(--font-titre);
+  font-size: 12px;
+  color: var(--muse-noir);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(10%, -20%);
+}
+
+/* --- NAVIGATION (colonne gauche) --- */
+#top-menu-nav,
+.et_header_style_centered #top-menu-nav {
+  grid-column: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+#top-menu,
+.et_header_style_centered #top-menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 32px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#top-menu > li > a {
+  font-family: var(--font-corps) !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--muse-noir) !important;
+  text-decoration: none !important;
+  padding: 4px 0 !important;
+  border-bottom: 0.5px solid transparent !important;
+  transition: border-color var(--transition) !important;
+}
+
+#top-menu > li > a:hover {
+  border-bottom-color: var(--muse-noir) !important;
+}
+
+/* --- ICÔNES DROITE (colonne droite) --- */
+.muse-header-icons {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.muse-header-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--muse-noir);
+  text-decoration: none;
+  transition: opacity var(--transition);
+  position: relative;
+}
+
+.muse-header-icons a:hover {
+  opacity: 0.6;
+}
+
+.muse-header-icons svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Badge panier */
+.muse-cart-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: var(--muse-rouge);
+  color: #fff;
+  font-family: var(--font-corps);
+  font-size: 9px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  line-height: 1;
+}
+
+/* --- BURGER MENU MOBILE --- */
+.muse-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  padding: 8px 6px;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.muse-burger span {
+  display: block;
+  width: 22px;
+  height: 0.75px;
+  background-color: var(--muse-noir);
+  transition: transform 0.28s ease, opacity 0.28s ease;
+  transform-origin: center;
+}
+
+/* Burger animé → croix */
+.muse-burger.is-open span:nth-child(1) {
+  transform: translateY(5.75px) rotate(45deg);
+}
+.muse-burger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.muse-burger.is-open span:nth-child(3) {
+  transform: translateY(-5.75px) rotate(-45deg);
+}
+
+/* Menu mobile overlay */
+.muse-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: var(--header-height) 0 0 0;
+  background-color: var(--muse-blanc);
+  z-index: 9000;
+  overflow-y: auto;
+  padding: 32px;
+  flex-direction: column;
+  gap: 0;
+  border-top: 0.5px solid var(--muse-border);
+}
+
+.muse-mobile-menu.is-open {
+  display: flex;
+}
+
+.muse-mobile-menu a {
+  font-family: var(--font-titre);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--muse-noir);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 0.5px solid var(--muse-border);
+  letter-spacing: 0.02em;
+}
+
+.muse-mobile-menu a:hover {
+  color: var(--muse-gris);
+}
+
+/* Cacher nav desktop sur mobile */
+@media (max-width: 980px) {
+  #top-menu-nav,
+  .et_header_style_centered #top-menu-nav {
+    display: none !important;
+  }
+
+  .muse-burger {
+    display: flex !important;
+    grid-column: 1;
+  }
+
+  .muse-header-icons {
+    gap: 12px;
+  }
+
+  .muse-header-icons .muse-icon-search {
+    display: none;
+  }
+}
+
+/* ============================================================
+   SECTION CHIFFRES CLÉS — Fond beige
+   ============================================================ */
+
+/* Cibler la section avec les stats (320 / 12K+ / CH) */
+.muse-stats-section,
+.et_pb_section.muse-stats-section {
+  background-color: var(--muse-beige) !important;
+}
+
+/* Fallback : si la section est identifiable par son contenu */
+/* Ajouter la classe CSS Divi "muse-stats-section" à la section */
+
+/* Style des chiffres */
+.muse-stats-section .et_pb_number_counter .title,
+.muse-stats-section [data-number] {
+  font-family: var(--font-titre) !important;
+  font-size: 64px !important;
+  font-weight: 300 !important;
+  color: var(--muse-noir) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.muse-stats-section .et_pb_number_counter .percent,
+.muse-stats-section .stat-label {
+  font-family: var(--font-corps) !important;
+  font-size: 10px !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--muse-gris) !important;
+}
+
+/* ============================================================
+   TRUST BAR — Fond beige
+   ============================================================ */
+
+.muse-trust-bar,
+.et_pb_section.muse-trust-bar {
+  background-color: var(--muse-beige) !important;
+}
+
+/* ============================================================
+   RÉDUCTION ESPACES BLANCS ENTRE SECTIONS
+   ============================================================ */
+
+/* Réduire le padding vertical global des sections Divi */
+.et_pb_section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+/* Hero — garder plus d'espace */
+.et_pb_section.muse-hero-section,
+.et_pb_section:first-of-type {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Citation / bandeau texte — plus compact */
+.muse-citation-section,
+.et_pb_section.muse-citation-section {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
+/* Séparateurs entre sections — espacement cohérent */
+.et_pb_row {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Divider ligne fine */
+.et_pb_divider .et_pb_divider_internal {
+  border-color: var(--muse-border) !important;
+  border-width: 0.5px !important;
+}
+
+/* Section catégories — déjà beige, padding ajusté */
+.muse-categories-section {
+  padding-top: 40px !important;
+  padding-bottom: 64px !important;
+}
+
+/* Section CTA vendre — garder son style noir */
+.muse-cta-section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+/* Section trust bar — plus compact */
+.muse-trust-bar {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+/* ============================================================
+   UTILITAIRES GLOBAUX
+   ============================================================ */
+
+/* Typo générale */
+body, .et_pb_text {
+  font-family: var(--font-corps) !important;
+  font-size: 12px !important;
+  color: var(--muse-noir) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+h1, h2, h3, .et_pb_slide_title {
+  font-family: var(--font-titre) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Liens */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbar fine */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(17,17,16,0.2); border-radius: 2px; }
+
+/* ============================================================
+   HEADER STICKY (Divi override)
+   ============================================================ */
+.et_fixed_nav #main-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* Compensation body pour header fixe */
+.et_fixed_nav #page-container {
+  padding-top: var(--header-height) !important;
+}
