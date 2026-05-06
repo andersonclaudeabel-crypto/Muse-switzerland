@@ -1,0 +1,194 @@
+/*
+ Theme Name: MUSE Switzerland Child
+ Template:   Divi
+ Version:    1.0.0
+ Text Domain: muse-switzerland-child
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* ============================================================
+   MUSE SWITZERLAND — Design System CSS v1.0
+   ============================================================ */
+
+:root {
+  --muse-beige:  #F2EFE9;
+  --muse-black:  #111110;
+  --muse-gray:   #6B6B68;
+  --muse-light:  #F8F6F2;
+  --muse-red:    #C41E3A;
+  --muse-border: rgba(17,17,16,0.12);
+  --muse-green:  #3B6D11;
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-sans:   'Jost', 'Helvetica Neue', sans-serif;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
+h1 { font-size: 42px; letter-spacing: -0.5px; }
+h2 { font-size: 28px; }
+h3 { font-size: 22px; }
+p  { font-size: 13px; line-height: 1.7; color: var(--muse-gray); }
+.eyebrow { font-size: 9px; letter-spacing: 3px; color: var(--muse-gray); font-weight: 500; text-transform: uppercase; }
+
+/* BUTTONS */
+.muse-btn-primary { background: var(--muse-black); color: #fff; border: none; padding: 13px 28px; font-size: 10px; letter-spacing: 2px; cursor: pointer; font-family: var(--font-sans); border-radius: 2px; text-transform: uppercase; }
+.muse-btn-primary:hover { opacity: 0.88; }
+.muse-btn-outline { background: transparent; color: var(--muse-black); border: 0.5px solid var(--muse-black); padding: 12px 28px; font-size: 10px; letter-spacing: 2px; cursor: pointer; font-family: var(--font-sans); border-radius: 2px; text-transform: uppercase; }
+.muse-btn-outline:hover { background: var(--muse-light); }
+
+/* PRODUCT CARD */
+.muse-product-card { cursor: pointer; }
+.muse-product-card__img { background: var(--muse-beige); aspect-ratio: 0.78; position: relative; overflow: hidden; margin-bottom: 10px; }
+.muse-product-card__img:hover { background: #EAE7DF; }
+.muse-product-card__badge { position: absolute; top: 9px; left: 9px; font-size: 8px; letter-spacing: 1.5px; padding: 3px 7px; background: #fff; color: var(--muse-black); text-transform: uppercase; }
+.muse-product-card__badge--red { background: var(--muse-red); color: #fff; }
+.muse-product-card__brand { font-size: 8px; letter-spacing: 2px; color: var(--muse-gray); margin-bottom: 3px; }
+.muse-product-card__name  { font-size: 11px; color: var(--muse-black); line-height: 1.35; margin-bottom: 5px; }
+.muse-product-card__price { font-size: 12px; font-weight: 500; color: var(--muse-black); }
+.muse-product-card__price--old { font-size: 10px; color: var(--muse-gray); text-decoration: line-through; margin-left: 4px; }
+.muse-product-card__cond { font-size: 8px; letter-spacing: 1px; color: var(--muse-gray); }
+
+/* STATUS BADGES */
+.muse-status { font-size: 8px; letter-spacing: 1.5px; padding: 3px 8px; border-radius: 2px; text-transform: uppercase; }
+.muse-status--delivered { background: #EAF3DE; color: var(--muse-green); }
+.muse-status--shipping  { background: #E6F1FB; color: #185FA5; }
+.muse-status--pending   { background: #FAEEDA; color: #854F0B; }
+.muse-status--new       { background: var(--muse-red); color: #fff; }
+
+/* TRUST BAR */
+.muse-trust-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.5px solid var(--muse-border); }
+.muse-trust-item { padding: 24px; border-right: 0.5px solid var(--muse-border); display: flex; align-items: flex-start; gap: 12px; }
+.muse-trust-item:last-child { border-right: none; }
+.muse-trust-icon svg { width: 18px; height: 18px; stroke: var(--muse-red); fill: none; stroke-width: 1.3; }
+.muse-trust-title { font-size: 11px; font-weight: 500; color: var(--muse-black); margin-bottom: 3px; }
+.muse-trust-desc  { font-size: 10px; color: var(--muse-gray); line-height: 1.5; }
+
+/* SECTION */
+.muse-section { padding: 52px 40px; }
+.muse-section__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
+.muse-section__title  { font-family: var(--font-serif); font-size: 26px; font-weight: 400; color: var(--muse-black); }
+.muse-section__link   { font-size: 11px; color: var(--muse-gray); cursor: pointer; border-bottom: 0.5px solid var(--muse-border); }
+
+/* FOOTER */
+.muse-footer-top { background: var(--muse-beige); padding: 48px 40px; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+.muse-footer-bottom { background: var(--muse-black); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; }
+.muse-footer-copy { font-size: 9px; letter-spacing: 1.5px; color: #666; }
+.muse-footer-col h4 { font-size: 8px; letter-spacing: 3px; color: var(--muse-gray); margin-bottom: 14px; font-weight: 500; text-transform: uppercase; }
+.muse-footer-col ul { list-style: none; }
+.muse-footer-col ul li { font-size: 11px; color: var(--muse-black); padding: 5px 0; cursor: pointer; }
+.muse-footer-col ul li:hover { color: var(--muse-red); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .muse-section { padding: 32px 16px; }
+  .muse-footer-top { grid-template-columns: 1fr; padding: 32px 16px; }
+  h1 { font-size: 28px; }
+  .muse-trust-bar { grid-template-columns: 1fr 1fr; }
+}
+
+/* CTA FULL WIDTH */
+.muse-cta-full {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* BURGER & SUBNAV */
+#muse-overlay {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#muse-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(17,17,16,0.5);
+  z-index: 2147483646;
+  transition: opacity 0.35s ease;
+}
+
+.muse-subnav a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.muse-subnav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #C41E3A;
+  transition: width 0.25s ease;
+}
+
+.muse-subnav a:hover {
+  color: #C41E3A !important;
+}
+
+.muse-subnav a:hover::after {
+  width: 100%;
+}
+
+/* BOUTON FLOTTANT */
+#muse-fab {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#muse-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(196,30,58,0.5);
+}
+
+/* Contact Form 7 */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"] {
+  width: 100% !important;
+  font-family: 'Jost', sans-serif !important;
+  font-size: 13px !important;
+  color: #111110 !important;
+  background: #fff !important;
+  border: 0.5px solid rgba(17,17,16,0.2) !important;
+  border-radius: 0 !important;
+  padding: 14px 18px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin-bottom: 12px !important;
+  box-sizing: border-box !important;
+}
+
+.wpcf7-form input[type="submit"] {
+  width: 100% !important;
+  font-family: 'Jost', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  background: #111110 !important;
+  color: #F2EFE9 !important;
+  border: none !important;
+  padding: 16px 40px !important;
+  cursor: pointer !important;
+  border-radius: 0 !important;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+  background: #C41E3A !important;
+}
+
+.muse-cf7 {
+  max-width: 420px !important;
+  margin: 0 auto !important;
+}
+
+.wpcf7-form .wp-armour-honeypot-wrap,
+[class*="wp-armour"] {
+  display: none !important;
+}
+
+.wpcf7-submit {
+  display: block !important;
+  margin: 0 auto !important;
+}
